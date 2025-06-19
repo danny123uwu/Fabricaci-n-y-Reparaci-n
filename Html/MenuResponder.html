@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <!-- Configuración de la vista para dispositivos móviles -->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <!-- Preconexión para optimizar la carga de fuentes de Google -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+ <!-- Importación de la fuente 'Poppins' desde Google Fonts -->
+ <link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;7
+00&display=swap" rel="stylesheet">
+
+ <!-- Enlace a la hoja de estilos de Font Awesome para usar íconos -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/5.15.4/css/all.min.css">
+
+ <!-- Título de la página -->
+ <title>Menú responsive</title>
+ </head>
+ <!-- Estilos CSS internos -->
+ <style>
+ /* Estilo universal para eliminar márgenes y rellenos, y establecer la fuente */
+ * {
+ margin: 0;
+ padding: 0;
+ font-family: 'Poppins', sans-serif;
+ }
+ /* Estilos para la barra de navegación */
+ .enlaces {
+ height: 6rem; /* Altura de la barra */
+ display: flex; /* Uso de flexbox para organizar el contenido */
+ justify-content: space-between; /* Espaciado entre elementos */
+ align-items: center; /* Alineación vertical al centro */
+ border-bottom: 2px solid #28ffc6; /* Línea inferior de color */
+ padding-left: 2%;
+ padding-right: 2%;
+ }
+ /* Estilos para el logo */
+ .logo {
+ text-decoration: none;
+ font-size: 40px;
+ font-weight: 700;
+ color: #247186; /* Color del logo */
+ }
+ /* Contenedor de los enlaces del menú */
+ .contenedorEnlaces {
+ flex: 1;
+text-align: right; /* Alinea los enlaces a la derecha */
+ }
+ /* Estilo para los elementos de la lista dentro del menú */
+ .contenedorEnlaces ul li {
+ list-style: none; /* Elimina los puntos de la lista */
+ display: inline-block; /* Alinea los elementos en línea */
+ padding: 8px 12px; /* Espaciado alrededor de cada enlace */
+ position: relative; /* Para usar el pseudo-elemento ::after */
+ }
+ /* Estilo para los enlaces dentro de los elementos de la lista */
+ .contenedorEnlaces ul li a {
+ color: black;
+ text-decoration: none; /* Elimina el subrayado por defecto */
+ font-size: 18px; /* Tamaño del texto */
+ }
+ /* Pseudo-elemento para la animación del subrayado al pasar el ratón */
+ .contenedorEnlaces ul li::after {
+ content: ''; /* Pseudo-elemento vacío */
+ width: 0%; /* Anchura inicial de 0% */
+ height: 2px; /* Altura del subrayado */
+ background: purple; /* Color del subrayado */
+ display: block;
+ margin: auto;
+ transition: 0.5s; /* Animación suave */
+ }
+ /* Expande el subrayado cuando se pasa el ratón */
+ .contenedorEnlaces ul li:hover::after {
+ width: 100%; /* La anchura se expande al 100% */
+ }
+ /* Oculta el icono del menú por defecto */
+ .fa {
+ display: none;
+ }
+ /* Estilo para las barras del menú hamburguesa */
+ .a {
+ height: 3px; /* Altura de cada barra */
+ width: 25px; /* Anchura de cada barra */
+ background-color: #247186; /* Color de las barras */
+ margin-top: 4px; /* Espaciado entre las barras */
+ }
+ /* Estilos para pantallas con ancho máximo de 900px */
+ @media screen and (max-width: 900px) {
+ .enlaces {
+ height: 5rem; /* Reduce la altura de la barra */
+ }
+ }
+
+ /* Estilos para pantallas con ancho máximo de 600px */
+ @media screen and (max-width: 600px) {
+ .enlaces {
+ height: 5rem; /* Reduce la altura de la barra */
+ }
+ /* Cambia el menú a un formato vertical */
+ .contenedorEnlaces ul li {
+ display: block; /* Los elementos se muestran en bloque */
+ }
+ .contenedorEnlaces ul li a {
+ color: black; /* Color de los enlaces */
+ }
+ /* Contenedor de los enlaces se convierte en un menú lateral */
+ .contenedorEnlaces {
+ position: fixed; /* Fija el contenedor en la pantalla */
+ background: #247186; /* Fondo del menú lateral */
+ height: 100vh; /* Ocupa toda la altura de la pantalla */
+ width: 200px; /* Anchura del menú lateral */
+ top: 0;
+ right: -200px; /* Inicialmente oculto a la derecha */
+ text-align: left;
+ z-index: 2;
+ transition: 1s; /* Transición suave al mostrar/ocultar */
+ }
+ /* Muestra el icono del menú (hamburguesa o cruz) */
+ .fa {
+ display: block;
+ color: white; /* Color del icono */
+ margin: 5px;
+ font-size: 18px; /* Tamaño del icono */
+ }
+ /* Estilo para el icono de cerrar (cruz) */
+ .fa-close {
+ padding-left: 10px;
+ padding-top: 10px;
+ }
+ /* Añade relleno a la lista dentro del menú lateral */
+ .contenedorEnlaces ul {
+ padding: 30px;
+ }
+ }
+ </style>
+ <body>
+ <!-- Barra de navegación --
+>
+ <nav class="enlaces">
+ <!--Enlace al logo --
+>
+ <a href="#" class="logo">LOGO</a>
+
+ <!-- Contenedor de los enlaces del menú -->
+ <div class="contenedorEnlaces" id="contenedorEnlaces">
+ <!-- Icono de cerrar (cruz) para ocultar el menú lateral -->
+ <i class="fa fa-times fa-close" aria-hidden="true" onclick="ocultarMenu()"></i>
+
+ <!-- Lista de enlaces del menú -->
+ <ul>
+ <li><a href="#">INICIO</a></li>
+ <li><a href="#">SOBRE NOSOTROS</a></li>
+ <li><a href="#">CONTACTO</a></li>
+ </ul>
+ </div>
+ <!-- Icono de menú hamburguesa para mostrar el menú lateral -->
+ <i class="fa fa-bars" aria-hidden="true" onclick="mostrarMenu()">
+ <!-- Las barras del menú hamburguesa -->
+ <div class="a"></div>
+ <div class="a"></div>
+ <div class="a"></div>
+ </i>
+ </nav>
+ <!-- JavaScript para controlar la visibilidad del menú lateral -->
+ <script>
+ // Obtiene el elemento del menú lateral
+ var contenedorEnlaces = document.getElementById("contenedorEnlaces");
+ // Función para mostrar el menú lateral
+ function mostrarMenu() {
+ contenedorEnlaces.style.right = "0"; // Mueve el menú a la vista
+ }
+ // Función para ocultar el menú lateral
+ function ocultarMenu() {
+ contenedorEnlaces.style.right = "-200px"; // Mueve el menú fuera de la vista
+ }
+ </script>
+ </body>
+</html>

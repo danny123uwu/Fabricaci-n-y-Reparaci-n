@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+ <!-- Metaetiqueta para definir la codificación de caracteres -->
+ <meta charset="UTF-8">
+ <!-- Enlace a una hoja de estilos externa de Font Awesome para los iconos -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/6.0.0-beta3/css/all.min.css">
+ <style>
+ /* Establece márgenes, relleno y el modelo de caja */
+ *{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Poppins', sans-serif; /* Fuente de todo el texto */
+ }
+ /* Estilo del cuerpo del documento */
+ body{
+ font-size: 16px;
+ line-height: 1.6; /* Espaciado entre líneas */
+ }
+ /* Estilo del contenedor de la cabecera */
+ .cabecera{
+ width: 100%; /* Ocupa todo el ancho */
+ height: 6rem; /* Altura de la cabecera */
+ display: flex; /* Flexbox para organizar el contenido horizontalmente */
+ align-items: center; /* Alineación vertical centrada */
+ padding: 2%; /* Relleno interno */
+ background-color: white; /* Fondo blanco */
+ }
+ /* Estilo del logo */
+ .logo{
+ text-decoration: none; /* Sin subrayado */
+ font-size: 40px; /* Tamaño de la fuente */
+ font-weight: 700; /* Negrita */
+ color: #247186; /* Color del texto */
+ }
+ /* Estilo del campo de búsqueda */
+ .buscar{
+ height: 40px; /* Altura del campo de texto */
+ border: 1px solid black; /* Borde de 1px de grosor y color negro */
+ border-radius: 3rem; /* Bordes redondeados */
+ width: 45%; /* Ancho del campo de búsqueda */
+ margin-left: 20%; /* Margen izquierdo para centrar */
+ padding-left: 22px; /* Relleno interno a la izquierda */
+ }
+ /* Estilo del botón de búsqueda */
+ .boton{
+ border: 0px; /* Sin borde */
+ background-color: transparent; /* Fondo transparente */
+ color: #28ffc6; /* Color del icono */
+ margin-left: -40px; /* Margen negativo para superponer el botón al campo de
+búsqueda */
+ font-size: 18px; /* Tamaño del icono */
+}
+ /* Cambia el color al pasar el ratón por encima del botón */
+ .boton:hover{
+ color: black;
+ }
+ /* Estilo del menú de navegación */
+ .menuNav{
+ width: 100%; /* Ancho completo */
+ display: flex; /* Flexbox para centrar los elementos */
+ justify-content: center; /* Centrado horizontal */
+ align-items: center; /* Centrado vertical */
+ height: 3rem; /* Altura del menú */
+ background-color: #247186; /* Color de fondo */
+ position: sticky; /* Se adhiere a la parte superior al hacer scroll */
+ top: 0; /* Posición en la parte superior */
+ z-index: 1000; /* Aparece por encima de otros elementos */
+ }
+ /* Estilo de la lista del menú de navegación */
+ .menuNav ul{
+ display: flex; /* Flexbox para alinear elementos en línea */
+ gap: 20px; /* Espacio entre los elementos */
+ }
+ /* Elimina el estilo de la lista */
+ .menuNav li{
+ list-style: none; /* Sin viñetas */
+ }
+ /* Estilo de los enlaces del menú de navegación */
+ .menuNav a{
+ color: #28ffc6; /* Color del texto */
+ text-decoration: none; /* Sin subrayado */
+ font-size: 20px; /* Tamaño del texto */
+ transition: color 0.3s; /* Transición suave para el cambio de color */
+ }
+ /* Cambia el color al pasar el ratón por encima del enlace */
+ .menuNav a:hover{
+ color: black;
+ }
+ /* Estilo del contenido de la página */
+ .contenido{
+ padding: 30px 2%; /* Relleno interno alrededor del contenido */
+ }
+ /* Estilo de los párrafos dentro del contenido */
+ .contenido p{
+ font-size: 20px; /* Tamaño del texto */
+ margin-bottom: 20px; /* Espacio debajo de cada párrafo */
+ }
+ </style>
+ </head>
+ <!-- Inicio del cuerpo del documento -->
+ <nav class="cabecera">
+ <!-- Logo de la página -->
+ <a href="#" class="logo">LOGO</a>
+ <!-- Campo de búsqueda -->
+ <input class="buscar" placeholder="Buscar...">
+
+ <!-- Botón de búsqueda con icono -->
+ <button class="boton" type="submit"><i class="fas fa-search"></i></button>
+ </nav>
+ <!-- Menú de navegación principal -->
+ <nav class="menuNav" id="menuNav">
+ <ul>
+ <!-- Elementos de la navegación con iconos -->
+ <li><a href="#"><i class="fas fa-home"></i>INICIO</a></li>
+ <li><a href="#"><i class="fas fa-info-circle"></i>SOBRE NOSOTROS</a></li>
+ <li><a href="#"><i class="fas fa-compass"></i>CONTACTO</a></li>
+ </ul>
+ </nav>
+ <!-- Contenido principal de la página -->
+ <div class="contenido">
+ <!-- Múltiples párrafos de contenido de ejemplo -->
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ <p>Esto es un párrafo.</p>
+ </div>
+ <!-- Script para hacer que el menú de navegación se vuelva sticky al hacer scroll -->
+ <script>
+ // Función que se ejecuta cuando se hace scroll
+ window.onscroll=function(){funcion()};
+ // Selecciona el elemento del menú de navegación
+ var cabecera=document.getElementById("menuNav");
+ // Obtiene la posición original del menú de navegación
+ var sticky=cabecera.offsetTop;
+ // Función que activa el estilo 'sticky' al pasar el menú por el tope de la pantalla
+ function funcion(){
+ if(window.pageYOffset>sticky){
+ cabecera.classList.add("sticky");
+ }else{
+ cabecera.classList.remove("sticky");
+ }
+ }
+ </script>
+</html>
